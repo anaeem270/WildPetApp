@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customcontrols="clr-namespace:The_Wild_Vet.CustomControls"
+             xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             x:Class="The_Wild_Vet.Views.DashboardPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="{OnPlatform 150, iOS=150, Android=120}" />
+                <RowDefinition Height="22"/>
+                <RowDefinition Height="22"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <BoxView Grid.Row="0" Grid.RowSpan="2" BackgroundColor="{StaticResource PrimaryColor}"/>
+
+             <!---Stacklayout with margin for different operating systems -->
+
+            <StackLayout Grid.Row="0" VerticalOptions="Start" Spacing="15">
+                <StackLayout.Margin>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android">20,0,20,0</On>
+                        <On Platform="iOS">20,40,20,0</On>
+                    </OnPlatform>
+                </StackLayout.Margin>
+
+                <ImageButton BackgroundColor="Transparent" Source="side_menu" HeightRequest="50" HorizontalOptions="StartAndExpand" Padding="20,15,8,8" Margin="-20,0,0,0" Clicked="On_SideMenu_Clicked"/>
+
+                <Label Text="Pets" TextColor="{StaticResource ColorOnDarkBackground}" FontSize="34" FontFamily="SemiBold" />
+
+            </StackLayout>
+            <StackLayout Grid.Row="2" Grid.RowSpan="2" BackgroundColor="{StaticResource LightBgColor}" Padding="0,40,0,0">
+
+
+
+            </StackLayout>
+            <Frame Grid.Row="1" Grid.RowSpan="2" CornerRadius="20" Margin="20,0,20,0" HasShadow="False" Padding="0">
+                <StackLayout Orientation="Horizontal" Margin="20,0,20,0" VerticalOptions="Center">
+                    <Image Source="search" WidthRequest="20"/>
+                    <customcontrols:BorderlessEntry Placeholder="Search" FontFamily="Regular" PlaceholderColor="#B7B5C5" HorizontalOptions="FillAndExpand" FontSize="Body"/>
+                </StackLayout>
+            </Frame>
+
+            <!---Collection view of pet so it can be binded -->
+            <CollectionView Grid.Row="3">
+                <CollectionView.ItemsSource>
+                    <!---Might need to change this as its hardcoded. -->
+                     <x:Array Type="{x:Type x:String}">
+                        <x:String>Charlie</x:String>
+                        <x:String>Milo</x:String>
+                        <x:String>Pikachu</x:String>
+                    </x:Array>
+                </CollectionView.ItemsSource>
+                <!---Layout of each Pet  -->
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="20,20,20,10" >
+                            <sh:Shadows CornerRadius="20" Shades="{sh:SingleShade Offset='0, 3', Opacity=0.23, Color={StaticResource PrimaryColor}, BlurRadius=15}">
+                                <pancakeview:PancakeView BackgroundColor="{StaticResource ColorOnDarkBackground}" HeightRequest="120" CornerRadius="20">
+                                    <StackLayout Orientation="Horizontal" Spacing="15">
+                                        <pancakeview:PancakeView HorizontalOptions="Start" HeightRequest="100" WidthRequest="100" VerticalOptions="Center" CornerRadius="15" BackgroundColor="{StaticResource LightBgColor}" Margin="10,0,0,0">
+                                            <Image Source="https://images.ctfassets.net/cnu0m8re1exe/1GxSYi0mQSp9xJ5svaWkVO/d151a93af61918c234c3049e0d6393e1/93347270_cat-1151519_1280.jpg " Aspect="AspectFill"/>
+                                        </pancakeview:PancakeView>
+                                        <Label Text="{Binding}" TextColor="{StaticResource PrimaryColor}" FontSize="Large" FontFamily="SemiBold" Margin="0,10,0,0"/>
+                                        <StackLayout.GestureRecognizers>
+                                          <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Pet_Tapped"/>
+                                        </StackLayout.GestureRecognizers>
+                                    </StackLayout>
+                                </pancakeview:PancakeView>
+                            </sh:Shadows>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+            </CollectionView>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

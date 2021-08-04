@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:customcontrols="clr-namespace:The_Wild_Vet.CustomControls"
+             x:Class="The_Wild_Vet.CustomControls.CustomEntry"
+             x:Name="customEntry">
+    <StackLayout>
+        <Label x:Name="headerLabel" Text="Email" TextColor="{StaticResource TextColor}" FontSize="Small" Margin="5,0,0,0"/>
+        <Frame x:Name="entryBorder" BackgroundColor="Transparent" BorderColor="{StaticResource LightTextColor}" CornerRadius="8" HasShadow="False" Padding="5,0,5,0">
+            <customcontrols:BorderlessEntry x:Name="entry"  IsPassword="False" Focused="entry_Focused" Unfocused="entry_Unfocused" FontFamily="Regular" TextChanged="entry_TextChanged" FontSize="Default"/>
+        </Frame>
+    </StackLayout>
+</ContentView>

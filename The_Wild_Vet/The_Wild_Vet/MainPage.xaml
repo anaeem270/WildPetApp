@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:The_Wild_Vet.Views"
+             x:Class="The_Wild_Vet.MainPage">
+
+    <!--Flyout used as the 'side menu'-->
+    <FlyoutPage.Flyout>
+        <views:MenuPage />
+    </FlyoutPage.Flyout>
+
+    <!--Detail as the page currently appears-->
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <views:DashboardPage />
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+
+</FlyoutPage>

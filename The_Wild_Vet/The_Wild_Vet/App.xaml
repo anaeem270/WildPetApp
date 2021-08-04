@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="The_Wild_Vet.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--Global Styles that can be called upon-->
+
+            <Color x:Key="PrimaryColor">#9C53DD</Color>
+            <Color x:Key="SecondoryColor">#DEC2FF</Color>
+            <Color x:Key="LightPrimaryColor">#DEBBFF</Color>
+            <Color x:Key="LightBgColor">#F1F1F7</Color>
+            <Color x:Key="LightTextColor">#E0C8FD</Color>
+            <Color x:Key="TextColor">#545871</Color>
+            <Color x:Key="ColorOnDarkBackground">#FFFFFF</Color>
+            <Color x:Key="ColorOnLightBackground">#000000</Color>
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="BarTextColor" Value="{StaticResource ColorOnDarkBackground}" />
+            </Style>
+
+            <Style x:Key="PrimaryButtonStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="TextColor" Value="{StaticResource ColorOnDarkBackground}" />
+                <Setter Property="FontFamily" Value="SemiBold" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="HeightRequest" Value="60"/>
+                <Setter Property="CornerRadius" Value="20"/>
+            </Style>
+
+            <Style x:Key="SecondoryButtonStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="BackgroundColor" Value="{StaticResource ColorOnDarkBackground}" />
+                <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="BorderColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="BorderWidth" Value="3" />
+                <Setter Property="FontFamily" Value="SemiBold" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="HeightRequest" Value="60"/>
+                <Setter Property="CornerRadius" Value="20"/>
+            </Style>
+            
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="Regular"/>
+                <Setter Property="TextColor" Value="{StaticResource ColorOnLightBackground}"/>
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="FontFamily" Value="Regular"/>
+                <Setter Property="TextColor" Value="{StaticResource ColorOnLightBackground}"/>
+            </Style>
+            <Style TargetType="Picker">
+                <Setter Property="FontFamily" Value="Regular"/>
+                <Setter Property="TextColor" Value="{StaticResource ColorOnLightBackground}"/>
+            </Style>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

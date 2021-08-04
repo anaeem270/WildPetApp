@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="The_Wild_Vet.Views.MenuPage"
+             Title="Menu">
+    <ContentPage.Content>
+        <Grid BackgroundColor="#B682E8">
+            <!--background image as the 1st child of the grid then it will appears below every other child-->
+            <Image Source="loginbg.png" VerticalOptions="Start"/>
+
+            <Grid RowDefinitions="100,auto,*,60" Padding="0,20,0,20">
+
+                <!--the profile image and name section-->
+                <StackLayout Spacing="15" Orientation="Horizontal" Padding="0,0,10,0" HorizontalOptions="Center">
+                    <pancakeview:PancakeView HeightRequest="50" WidthRequest="50" CornerRadius="25" BackgroundColor="AliceBlue" VerticalOptions="Center">
+                        <Image Source="profile_placeholder.png" Aspect="AspectFill"/>
+                    </pancakeview:PancakeView>
+
+                    <Label Text="John Smith" TextColor="{StaticResource ColorOnDarkBackground}" FontSize="Medium" FontFamily="SemiBold" VerticalTextAlignment="Center" MaxLines="2"  />
+                </StackLayout>
+                
+                <!--listview to appear the menu items-->
+                <ListView Grid.Row="1" x:Name="ListViewMenu" HasUnevenRows="True" SeparatorVisibility="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Spacing="15" Orientation="Horizontal" Padding="50,15,10,15">
+                                    <Image HeightRequest="20">
+                                        <Image.Source>
+                                            <FontImageSource Glyph="{Binding Icon}" Color="{StaticResource ColorOnDarkBackground}" Size="20" FontFamily="FontIcons" />
+                                        </Image.Source>
+                                    </Image>
+                                    <Label Text="{Binding Title}" FontSize="Body" FontFamily="SemiBold" TextColor="{StaticResource ColorOnDarkBackground}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <!--logout section-->
+                <StackLayout Grid.Row="3" Spacing="15" Orientation="Horizontal" Padding="50,15,10,15" xct:TouchEffect.NativeAnimation="True">
+                    <Image HeightRequest="20" VerticalOptions="Center">
+                        <Image.Source>
+                            <FontImageSource Glyph="&#xf0343;" Color="{StaticResource ColorOnDarkBackground}" Size="20" FontFamily="FontIcons" />
+                        </Image.Source>
+                    </Image>
+                    <Label Text="Logout" VerticalTextAlignment="Center" FontSize="Body" FontFamily="SemiBold" TextColor="{StaticResource ColorOnDarkBackground}"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="LogOut_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

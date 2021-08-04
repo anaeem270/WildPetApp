@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="The_Wild_Vet.Views.LoginPage"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows" xmlns:customcontrols="clr-namespace:The_Wild_Vet.CustomControls"
+             BackgroundColor="{StaticResource LightBgColor}">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="loginbg.png" VerticalOptions="Start"/>
+            <ScrollView>
+                <Grid RowDefinitions="100,80,auto,30,30,100" RowSpacing="0" VerticalOptions="Center" >
+                    <Image Source="logo.png" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="80" Margin="0,20,0,0"/>
+                    <Label Grid.Row="1" Text="Login" TextColor="{StaticResource ColorOnDarkBackground}" FontSize="36" FontFamily="SemiBold" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+
+                    <sh:Shadows Grid.Row="2" Grid.RowSpan="2" VerticalOptions="CenterAndExpand" Margin="20,0,20,0" CornerRadius="20" Shades="{sh:SingleShade Offset='0, 10', Opacity=0.2, Color={StaticResource PrimaryColor}, BlurRadius=15}">
+                        <Frame Padding="30,40,30,70" BackgroundColor="{StaticResource ColorOnDarkBackground}" CornerRadius="20" HasShadow="False">
+                            <StackLayout Spacing="20">
+                                
+                                <customcontrols:CustomEntry FontSize="Default" HeaderLabel="Email" Keyboard="Email"/>
+
+                                <customcontrols:CustomEntry FontSize="Default" HeaderLabel="Password" IsPassword="True"/>
+
+                                <Label Text="Forgot password?" TextColor="{StaticResource TextColor}" Opacity="0.7" FontSize="Small" TextDecorations="Underline" Margin="5,0,0,0" HorizontalOptions="Start" xct:TouchEffect.NativeAnimation="True"/>
+                            </StackLayout>
+                            
+                        </Frame>
+                    </sh:Shadows>
+                    
+                    <sh:Shadows Grid.Row="3" Grid.RowSpan="2" VerticalOptions="CenterAndExpand" Margin="50,0,50,0" CornerRadius="20" Shades="{sh:SingleShade Offset='0, 10', Opacity=0.3, Color={StaticResource PrimaryColor}, BlurRadius=15}">
+                        <!--Margin="{OnPlatform Android='0,0,20,15', iOS='0,0,20,90'}"-->
+                        <Button Text="Login" Style="{StaticResource PrimaryButtonStyle}" Clicked="Login_Clicked"/>
+                    </sh:Shadows>
+
+                    <Label Grid.Row="5" TextColor="{StaticResource TextColor}" FontSize="Body" VerticalOptions="Center" HorizontalOptions="Center" xct:TouchEffect.NativeAnimation="True">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Don't have an account? "/>
+                                <Span Text="Register" FontFamily="SemiBold" FontSize="Body"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Register_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

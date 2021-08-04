@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "tkrfczfIHQPeYJLPHduXuBzwk4hn6lPkyOz8FaNzd6M9oZDbVafiQbFOyutJv+hXXCW4dZ00fF3lTFJGOnZZTw==",
+  "success": true,
+  "projectFilePath": "/Users/thanhle/Documents/Assignment/The_Wild_Vet/The_Wild_Vet/The_Wild_Vet.iOS/The_Wild_Vet.iOS.csproj",
+  "expectedPackageFiles": [
+    "/Users/thanhle/.nuget/packages/sharpnado.shadows/1.2.0/sharpnado.shadows.1.2.0.nupkg.sha512",
+    "/Users/thanhle/.nuget/packages/system.componentmodel/4.3.0/system.componentmodel.4.3.0.nupkg.sha512",
+    "/Users/thanhle/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/thanhle/.nuget/packages/thomaslevesque.weakevent/4.1.0/thomaslevesque.weakevent.4.1.0.nupkg.sha512",
+    "/Users/thanhle/.nuget/packages/xamarin.communitytoolkit/1.3.0-pre1/xamarin.communitytoolkit.1.3.0-pre1.nupkg.sha512",
+    "/Users/thanhle/.nuget/packages/xamarin.essentials/1.7.0/xamarin.essentials.1.7.0.nupkg.sha512",
+    "/Users/thanhle/.nuget/packages/xamarin.forms/5.0.0.2083/xamarin.forms.5.0.0.2083.nupkg.sha512",
+    "/Users/thanhle/.nuget/packages/xamarin.forms.pancakeview/2.3.0.763-beta/xamarin.forms.pancakeview.2.3.0.763-beta.nupkg.sha512"
+  ],
+  "logs": []
+}

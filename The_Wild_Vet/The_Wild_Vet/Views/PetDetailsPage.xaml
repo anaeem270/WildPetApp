@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="The_Wild_Vet.Views.PetDetailsPage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="TabItemTemplate">
+                <Label Text="{TemplateBinding Text}" TextColor="{StaticResource TextColor}" FontSize="Caption" FontFamily="SemiBold" VerticalOptions="Center" HorizontalOptions="Center"/>
+            </ControlTemplate>
+
+            <Style
+		        x:Key="CustomTabStyle"
+		        TargetType="xct:TabView">
+                <Setter
+			        Property="IsTabTransitionEnabled"
+			        Value="True" />
+                <Setter
+			        Property="TabStripHeight"
+			        Value="60" />
+                <Setter
+			        Property="TabContentBackgroundColor"
+			        Value="Transparent" />
+                <Setter
+			        Property="TabStripPlacement"
+			        Value="Top" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="3.7*,40,6.3*">
+            <Image Grid.RowSpan="2" Source="petImg.png" Aspect="AspectFill"/>
+
+            <pancakeview:PancakeView Grid.Row="1" Grid.RowSpan="2" CornerRadius="40,40,0,0" BackgroundColor="{StaticResource ColorOnDarkBackground}" Shadow="{pancakeview:ShadowMarkup Color=#FF0000, Offset='-10,20'}">
+                <Grid RowDefinitions="*,100" RowSpacing="0">
+
+                    <!--Top part of the detail box-->
+                    <Grid Grid.Row="0" RowDefinitions="auto,*" Padding="20,30,20,20">
+                        
+                        <!--Nested stacklayouts for names and gender -->
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Start" Padding="5,0,0,0">
+                            <StackLayout HorizontalOptions="StartAndExpand" Spacing="5">
+                                <Label Text="Charlie" TextColor="{StaticResource TextColor}" FontSize="24" FontFamily="SemiBold"/>
+                                <Label Text="Maine Coon" TextColor="{StaticResource TextColor}" Opacity="0.6" FontSize="20" FontFamily="SemiBold"/>
+                            </StackLayout>
+
+                            <Frame BackgroundColor="#B7D1E5" Padding="5" HasShadow="False" CornerRadius="5" VerticalOptions="Start">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image HeightRequest="20">
+                                        <Image.Source>
+                                            <FontImageSource Glyph="&#xf029d;" Color="{StaticResource TextColor}" Size="20" FontFamily="FontIcons" /> <!--Female glyph :-  &#xf029c;  -->
+                                        </Image.Source>
+                                    </Image>
+                                    <Label Text="Male" TextColor="{StaticResource TextColor}" FontSize="Default" VerticalTextAlignment="Center"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                        
+                        <!--TabView Section-->
+                        <xct:TabView Margin="0,20,0,-20" Grid.Row="1" Style="{StaticResource CustomTabStyle}" TabIndicatorHeight="45" TabIndicatorPlacement="Center" IsTabTransitionEnabled="True" IsSwipeEnabled="False" SelectionChanged="TabView_SelectionChanged">
+                            <xct:TabView.TabStripBackgroundView>
+                                <sh:Shadows CornerRadius="30" Shades="{sh:SingleShade Offset='0, 4', Opacity=0.25, Color={StaticResource TextColor}, BlurRadius=15}">
+                                    <pancakeview:PancakeView BackgroundColor="{StaticResource SecondoryColor}" CornerRadius="30"/>
+                                </sh:Shadows>
+                            </xct:TabView.TabStripBackgroundView>
+                            <xct:TabView.TabIndicatorView>
+                                <sh:Shadows CornerRadius="30" Shades="{sh:SingleShade Offset='0, 3', Opacity=0.23, Color={StaticResource TextColor}, BlurRadius=15}">
+                                    <pancakeview:PancakeView BackgroundColor="{StaticResource ColorOnDarkBackground}" CornerRadius="30" Margin="8,0,8,0"/>
+                                </sh:Shadows>
+                            </xct:TabView.TabIndicatorView>
+
+                            <!--Tabview of Overview-->
+                            <xct:TabViewItem 
+                                    x:Name="MyTab1"   
+                                    TabTapped="Tab1_TabTapped"
+                                    Text="Overview" 
+                                    TextColor="LightGray"
+                                    ControlTemplate="{StaticResource TabItemTemplate}">
+
+                                <Grid Margin="0,10,0,0" Padding="0,30,0,20">
+                                    
+                                    <!--The details of the pet as a collectionview so the list can be binded-->
+                                    <CollectionView >
+                                        <CollectionView.ItemsSource>
+                                            <x:Array Type="{x:Type x:String}">
+                                                <x:String>AGE</x:String>
+                                                <x:String>WEIGHT</x:String>
+                                                <x:String>COLOR</x:String>
+                                                <x:String>MICRO CHIPPED</x:String>
+                                            </x:Array>
+                                        </CollectionView.ItemsSource>
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <pancakeview:PancakeView HorizontalOptions="Fill" VerticalOptions="Start" BackgroundColor="Transparent" Border="{pancakeview:BorderMarkup Color={StaticResource LightTextColor}, Thickness='5'}" Padding="10" CornerRadius="10">
+                                                    <StackLayout>
+                                                        <Label Text="{Binding}" TextColor="{StaticResource TextColor}" Opacity="0.5" FontSize="14" FontFamily="SemiBold"/>
+                                                        <Label Text="1yr 2mo" TextColor="{StaticResource TextColor}" FontSize="16" FontFamily="SemiBold"/>
+                                                    </StackLayout>
+                                                </pancakeview:PancakeView>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+
+                                        <CollectionView.ItemsLayout>
+                                            <GridItemsLayout Orientation="Vertical" Span="3" HorizontalItemSpacing="15" VerticalItemSpacing="15"/>
+                                        </CollectionView.ItemsLayout>
+                                    </CollectionView>
+                                </Grid>
+                                
+                            </xct:TabViewItem>
+
+                            <!--Tabview of Health-->
+                            <xct:TabViewItem 
+                                    x:Name="MyTab2"   
+                                    TabTapped="Tab2_TabTapped"
+                                    Text="Health" 
+                                    TextColor="LightGray"
+                                    ControlTemplate="{StaticResource TabItemTemplate}">
+
+                                <Grid Margin="0,10,0,0">
+                                    <Label HorizontalOptions="Center" VerticalOptions="Center" Text="TabContent 2" />
+                                </Grid>
+
+                            </xct:TabViewItem>
+
+                            <!--Tabview of Record-->
+                            <xct:TabViewItem 
+                                    x:Name="MyTab3"   
+                                    TabTapped="Tab3_TabTapped"
+                                    Text="Record" 
+                                    TextColor="LightGray"
+                                    ControlTemplate="{StaticResource TabItemTemplate}">
+
+                                <Grid Margin="0,10,0,0">
+                                    <Label HorizontalOptions="Center" VerticalOptions="Center" Text="TabContent 3" />
+                                </Grid>
+
+                            </xct:TabViewItem>
+
+                            <!--Tabview of Other-->
+                            <xct:TabViewItem 
+                                    x:Name="MyTab4"   
+                                    TabTapped="Tab4_TabTapped"
+                                    Text="Other" 
+                                    TextColor="LightGray"
+                                    ControlTemplate="{StaticResource TabItemTemplate}">
+
+                                <Grid Margin="0,10,0,0">
+                                    <Label HorizontalOptions="Center" VerticalOptions="Center" Text="TabContent 4" />
+                                </Grid>
+
+                            </xct:TabViewItem>
+                        </xct:TabView>
+                    </Grid>
+
+                    <!--Bottom buttons part of the detail box-->
+                    <Grid Grid.Row="1" ColumnDefinitions="75*,25*" ColumnSpacing="15" Padding="0,10,0,0">
+
+                        <!--Get Care button-->
+                        <sh:Shadows Margin="20,0,0,20" VerticalOptions="CenterAndExpand" CornerRadius="15" Shades="{sh:SingleShade Offset='0, 10', Opacity=0.3, Color={StaticResource PrimaryColor}, BlurRadius=15}">
+                            <Button Text="Get Care" HeightRequest="55" CornerRadius="15" Style="{StaticResource PrimaryButtonStyle}" ContentLayout="Right,0" Padding="50,0,50,0">
+                                <Button.ImageSource>
+                                    <FontImageSource Glyph="&#xf0415;" Color="{StaticResource ColorOnDarkBackground}" Size="35" FontFamily="FontIcons" />
+                                </Button.ImageSource>
+                            </Button>
+                        </sh:Shadows>
+
+                        <!--Share button-->
+                        <sh:Shadows Grid.Column="1" Margin="0,0,20,20" VerticalOptions="CenterAndExpand" CornerRadius="15" Shades="{sh:SingleShade Offset='0, 10', Opacity=0.3, Color={StaticResource PrimaryColor}, BlurRadius=15}">
+                            <Button WidthRequest="60" HeightRequest="55" CornerRadius="15" Style="{StaticResource SecondoryButtonStyle}">
+                                <Button.ImageSource>
+                                    <FontImageSource Glyph="&#xf0497;" Color="{StaticResource PrimaryColor}" Size="30" FontFamily="FontIcons" />
+                                </Button.ImageSource>
+                            </Button>
+                        </sh:Shadows>
+                    </Grid>
+                </Grid>
+            </pancakeview:PancakeView>
+
+            <!--Back button-->
+            <Frame Grid.Row="0" Margin="15,15,0,0" Padding="0" HasShadow="False" BackgroundColor="{StaticResource ColorOnLightBackground}" Opacity="0.4" HeightRequest="50" WidthRequest="50" HorizontalOptions="Start" VerticalOptions="Start" CornerRadius="25" xct:TouchEffect.NativeAnimation="True">
+                <Image VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent">
+                    <Image.Source>
+                        <FontImageSource Glyph="&#xf0141;" Color="{StaticResource ColorOnDarkBackground}" Size="35" FontFamily="FontIcons" />
+                    </Image.Source>
+                </Image>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Back_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
