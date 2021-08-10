@@ -712,6 +712,12 @@
 /Users/thanhle/Documents/Assignment/The_Wild_Vet/The_Wild_Vet/The_Wild_Vet.Android/obj/Debug/res/mipmap-xxhdpi/launcher_foreground.png
 /Users/thanhle/Documents/Assignment/The_Wild_Vet/The_Wild_Vet/The_Wild_Vet.Android/obj/Debug/res/mipmap-xxxhdpi/icon.png
 /Users/thanhle/Documents/Assignment/The_Wild_Vet/The_Wild_Vet/The_Wild_Vet.Android/obj/Debug/res/mipmap-xxxhdpi/launcher_foreground.png
+/Users/thanhle/Documents/Assignment/The_Wild_Vet/The_Wild_Vet/The_Wild_Vet.Android/obj/Debug/res/drawable/add.png
+/Users/thanhle/Documents/Assignment/The_Wild_Vet/The_Wild_Vet/The_Wild_Vet.Android/obj/Debug/res/drawable/search2.png
+/Users/thanhle/Documents/Assignment/The_Wild_Vet/The_Wild_Vet/The_Wild_Vet.Android/obj/Debug/res/drawable/instagram.png
+/Users/thanhle/Documents/Assignment/The_Wild_Vet/The_Wild_Vet/The_Wild_Vet.Android/obj/Debug/res/drawable/others.png
+/Users/thanhle/Documents/Assignment/The_Wild_Vet/The_Wild_Vet/The_Wild_Vet.Android/obj/Debug/res/drawable/another_user.png
+/Users/thanhle/Documents/Assignment/The_Wild_Vet/The_Wild_Vet/The_Wild_Vet.Android/obj/Debug/res/drawable/instagram_black.jpg
 /Users/thanhle/Documents/Assignment/The_Wild_Vet/The_Wild_Vet/The_Wild_Vet.Android/obj/Debug/res/drawable/paw.png
 /Users/thanhle/Documents/Assignment/The_Wild_Vet/The_Wild_Vet/The_Wild_Vet.Android/obj/Debug/res/drawable/gettingstarted.png
 /Users/thanhle/Documents/Assignment/The_Wild_Vet/The_Wild_Vet/The_Wild_Vet.Android/obj/Debug/res/drawable/logo.png

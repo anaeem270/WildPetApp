@@ -29,12 +29,16 @@ namespace The_Wild_Vet.Views {
         private global::Xamarin.CommunityToolkit.UI.Views.TabViewItem MyTab4;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Sharpnado.Shades.Shadows SharePopup;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PetDetailsPage));
             MyTab1 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.CommunityToolkit.UI.Views.TabViewItem>(this, "MyTab1");
             MyTab2 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.CommunityToolkit.UI.Views.TabViewItem>(this, "MyTab2");
             MyTab3 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.CommunityToolkit.UI.Views.TabViewItem>(this, "MyTab3");
             MyTab4 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.CommunityToolkit.UI.Views.TabViewItem>(this, "MyTab4");
+            SharePopup = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Sharpnado.Shades.Shadows>(this, "SharePopup");
         }
     }
 }

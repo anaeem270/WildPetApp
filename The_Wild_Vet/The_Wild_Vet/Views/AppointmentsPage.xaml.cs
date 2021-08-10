@@ -16,5 +16,17 @@ namespace The_Wild_Vet.Views
         {
             InitializeComponent();
         }
+
+        private void On_SideMenu_Clicked(object sender, EventArgs e)
+        {
+            if ((Application.Current.MainPage as MainPage).IsPresented == false)
+            {
+                (Application.Current.MainPage as MainPage).IsPresented = true;
+            }
+            else
+            {
+                (Application.Current.MainPage as MainPage).IsPresented = false;
+            }
+        }
     }
 }

@@ -1,8 +1,11 @@
-﻿<Properties StartupConfiguration="{55881CF3-EA4D-463F-BD4D-6D24C703C3E7}|Default">
+﻿<Properties StartupConfiguration="{BA5A1998-DD65-4FEE-A637-36582A0EBF37}|Default">
   <MonoDevelop.Ide.ItemProperties.The__Wild__Vet.Android PreferredExecutionTarget="Android.pixel_2_oreo_8_0_-_api_26" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="The_Wild_Vet/The_Wild_Vet/Views/DashboardPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="The_Wild_Vet/The_Wild_Vet/Views/AppointmentsPage.xaml">
     <Files>
-      <File FileName="The_Wild_Vet/The_Wild_Vet/Views/DashboardPage.xaml.cs" Line="42" Column="2" />
+      <File FileName="The_Wild_Vet/The_Wild_Vet/MainPage.xaml" Line="1" Column="1" IsPinned="True" />
+      <File FileName="The_Wild_Vet/The_Wild_Vet/Views/PetDetailsPage.xaml" Line="173" Column="164" />
+      <File FileName="The_Wild_Vet/The_Wild_Vet/Views/PetDetailsPage.xaml.cs" />
+      <File FileName="The_Wild_Vet/The_Wild_Vet/Views/AppointmentsPage.xaml" Line="53" Column="55" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,19 +13,21 @@
           <Node name="The_Wild_Vet" expanded="True">
             <Node name="The_Wild_Vet" expanded="True">
               <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="AppointmentsPage.xaml" selected="True" />
+                <Node name="PetDetailsPage.xaml" expanded="True" />
+              </Node>
               <Node name="App.xaml" expanded="True" />
               <Node name="MainPage.xaml" expanded="True" />
             </Node>
-            <Node name="The_Wild_Vet.Android" expanded="True" />
-            <Node name="The_Wild_Vet.iOS" selected="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
-  <MonoDevelop.Ide.ItemProperties.The__Wild__Vet.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C88CE922-8D2E-4EE8-83C2-A09277803158" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.The__Wild__Vet.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.798A0B56-4ED4-4D8A-B1CE-CAA8FBE16EEB" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

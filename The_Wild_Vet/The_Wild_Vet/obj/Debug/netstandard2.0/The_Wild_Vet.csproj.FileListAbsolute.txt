@@ -29,7 +29,6 @@
 /Users/thanhle/Documents/Assignment/The_Wild_Vet/The_Wild_Vet/The_Wild_Vet/bin/Debug/netstandard2.0/The_Wild_Vet.dll
 /Users/thanhle/Documents/Assignment/The_Wild_Vet/The_Wild_Vet/The_Wild_Vet/bin/Debug/netstandard2.0/ref/The_Wild_Vet.dll
 /Users/thanhle/Documents/Assignment/The_Wild_Vet/The_Wild_Vet/The_Wild_Vet/bin/Debug/netstandard2.0/The_Wild_Vet.pdb
-/Users/thanhle/Documents/Assignment/The_Wild_Vet/The_Wild_Vet/The_Wild_Vet/obj/Debug/netstandard2.0/The_Wild_Vet.csproj.AssemblyReference.cache
 /Users/thanhle/Documents/Assignment/The_Wild_Vet/The_Wild_Vet/The_Wild_Vet/obj/Debug/netstandard2.0/App.xaml.g.cs
 /Users/thanhle/Documents/Assignment/The_Wild_Vet/The_Wild_Vet/The_Wild_Vet/obj/Debug/netstandard2.0/CustomControls/CustomEntry.xaml.g.cs
 /Users/thanhle/Documents/Assignment/The_Wild_Vet/The_Wild_Vet/The_Wild_Vet/obj/Debug/netstandard2.0/MainPage.xaml.g.cs

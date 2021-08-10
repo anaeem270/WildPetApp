@@ -170,7 +170,7 @@
 
                         <!--Share button-->
                         <sh:Shadows Grid.Column="1" Margin="0,0,20,20" VerticalOptions="CenterAndExpand" CornerRadius="15" Shades="{sh:SingleShade Offset='0, 10', Opacity=0.3, Color={StaticResource PrimaryColor}, BlurRadius=15}">
-                            <Button WidthRequest="60" HeightRequest="55" CornerRadius="15" Style="{StaticResource SecondoryButtonStyle}">
+                            <Button WidthRequest="60" HeightRequest="55" CornerRadius="15" Style="{StaticResource SecondoryButtonStyle}" Clicked="ShareBtn_Clicked">
                                 <Button.ImageSource>
                                     <FontImageSource Glyph="&#xf0497;" Color="{StaticResource PrimaryColor}" Size="30" FontFamily="FontIcons" />
                                 </Button.ImageSource>
@@ -179,6 +179,38 @@
                     </Grid>
                 </Grid>
             </pancakeview:PancakeView>
+
+            <!--Share pop up screen-->
+            <sh:Shadows x:Name="SharePopup" Grid.Row="2" TranslationY="170" CornerRadius="40" Shades="{sh:SingleShade Offset='0, -6', Opacity=0.5, Color={StaticResource TextColor}, BlurRadius=15}">
+                <pancakeview:PancakeView CornerRadius="40,40,0,0" BackgroundColor="{StaticResource LightBgColor}" HeightRequest="160" VerticalOptions="End">
+                    <StackLayout Padding="0,10,0,20" Spacing="20">
+                        <Grid ColumnDefinitions="*,60" RowDefinitions="30">
+                            <Label Grid.ColumnSpan="2" Text="Share to" TextColor="{StaticResource TextColor}" FontSize="Medium" FontFamily="SemiBold" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
+                            <Button Grid.Column="1" BackgroundColor="{StaticResource ColorOnDarkBackground}" HeightRequest="30" WidthRequest="30" CornerRadius="15" VerticalOptions="Start" HorizontalOptions="End" Margin="0,0,20,0" Clicked="Close_Clicked">
+                                <Button.ImageSource>
+                                    <FontImageSource Glyph="&#xf0156;" Color="#B1B1B1" Size="25" FontFamily="FontIcons"/>
+                                </Button.ImageSource>
+                            </Button>
+                        </Grid>
+                        
+                        <StackLayout Margin="-10,0,0,0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="30">
+                            <StackLayout>
+                                <Frame Padding="8" HasShadow="False" HeightRequest="40" WidthRequest="40" HorizontalOptions="Center" CornerRadius="10" BackgroundColor="{StaticResource ColorOnDarkBackground}">
+                                    <Image Source="another_user.png" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="35"/>
+                                </Frame>
+                                <Label Text="Another User" TextColor="{StaticResource TextColor}" FontSize="Small" HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                            <StackLayout>
+                                <Frame Padding="8" HasShadow="False" HeightRequest="40" WidthRequest="40" HorizontalOptions="Center" CornerRadius="10" BackgroundColor="{StaticResource ColorOnDarkBackground}">
+                                    <Image Source="instagram.png" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="35"/>
+                                </Frame>
+                                <Label Text="Instagram" TextColor="{StaticResource TextColor}" FontSize="Small" HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </pancakeview:PancakeView>
+            </sh:Shadows>
+
 
             <!--Back button-->
             <Frame Grid.Row="0" Margin="15,15,0,0" Padding="0" HasShadow="False" BackgroundColor="{StaticResource ColorOnLightBackground}" Opacity="0.4" HeightRequest="50" WidthRequest="50" HorizontalOptions="Start" VerticalOptions="Start" CornerRadius="25" xct:TouchEffect.NativeAnimation="True">
@@ -191,6 +223,15 @@
                     <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Back_Tapped"/>
                 </Frame.GestureRecognizers>
             </Frame>
+
+             <!--Upload Image button-->
+            <Grid Grid.Row="0" Margin="15,15,15,0" Padding="0"  HeightRequest="50" WidthRequest="50" HorizontalOptions="End" VerticalOptions="Start" >
+                <Image Source="others.png"   VerticalOptions="End" HorizontalOptions="End" BackgroundColor="Transparent"   />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Add_Tapped"/>
+                </Grid.GestureRecognizers>   
+
+            </Grid>
 
         </Grid>
     </ContentPage.Content>
